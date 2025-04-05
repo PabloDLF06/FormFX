@@ -8,7 +8,7 @@ import javafx.scene.control.TextField
 class FormFXController {
 
     @FXML
-    private lateinit var nameQuestion: Label
+    private lateinit var blueLabel: Label
 
     @FXML
     private lateinit var fieldForm: TextField
@@ -18,13 +18,19 @@ class FormFXController {
 
     @FXML
     private fun initialize() {
-        nameQuestion.isVisible = false
+        blueLabel.isVisible = false
+        sendButton.isDisable = true
+
+        // Reto: Activar 'sendButton' cuando haya al menos 2 letras en 'fieldForm'
+        fieldForm.textProperty().addListener { _, _, newValue ->
+            sendButton.isDisable = newValue.length < 2
+        }
 
         sendButton.setOnAction {
             val name = fieldForm.text
             if (name.isNotEmpty()) {
-                nameQuestion.text = "Hola, $name!"
-                nameQuestion.isVisible = true
+                blueLabel.text = "Hola, $name!"
+                blueLabel.isVisible = true
             }
         }
     }

@@ -12,7 +12,7 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="nameQuestion" text="Introduce tu nombre completo aquí:" textFill="#1500ff" />
+    <Label fx:id="blueLabel" textFill="#1500ff" />
    <TextField fx:id="fieldForm" promptText="Introduce tu nombre completo aquí" />
     <Button fx:id="sendButton" text="Enviar" />
    <cursor>
